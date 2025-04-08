@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>dwba4-semana-04-PT3022382</title>
+    <title>dwba4-semana-03-PT3022382</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         body {
@@ -17,8 +17,18 @@
             text-align: center;
             padding: 20px;
         }
-        .header img {
-            width: 150px;
+        .nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: right;
+        }
+        .nav a {
+            margin-left: 20px;
+            color: #333;
+            text-decoration: none;
+        }
+        .nav a:hover {
+            text-decoration: underline;
         }
         .container {
             padding: 0 15px;
@@ -39,11 +49,9 @@
         .footer {
             background-color: #333;
             color: white;
-            text-align: left;
             padding: 10px;
-            position: absolute;
             width: 100%;
-            bottom: 0;
+            text-align: left;
         }
         .footer-icons {
             display: flex;
@@ -55,15 +63,38 @@
             margin-right: 10px;
         }
         .footer p {
-            margin-top: 0;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
 <body>
+
     <div class="header">
         <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/Logo.jpg" alt="Logo Instituto Federal São Paulo">
     </div>
-    <div class="container">
+
+    <div class="nav">
+        <a href="#home" onclick="showSection('home')">HOME</a> |
+        <a href="#contato" onclick="showSection('contato')">CONTATO</a> |
+        <a href="#sobre" onclick="showSection('sobre')">SOBRE</a>
+    </div>
+
+    <div id="home" class="container">
+        <section class="cursos">
+            <h2>Cursos</h2>
+            <ul>
+                <li><a href="#analise" onclick="showSection('analise')">Análise e Desenvolvimento de Sistemas</a></li>
+                <li><a href="#">Engenharia de Produção</a></li>
+                <li><a href="#">Gestão em Tecnologia da Informação</a></li>
+                <li><a href="#">Letras</a></li>
+                <li><a href="#">Gestão Pública</a></li>
+            </ul>
+        </section>
+
         <section class="evento">
             <h2>Eventos</h2>
             <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/SEJA_RARO.jpg" alt="Semana Nacional de Ciência e Tecnologia">
@@ -87,16 +118,51 @@
         </section>
     </div>
 
+    <div id="contato" class="container hidden">
+        <!-- Página em Branco para Contato -->
+        <h2>Contato</h2>
+        <p>Esta é a página de contato.</p>
+    </div>
+
+    <div id="sobre" class="container hidden">
+        <!-- Página em Branco para Sobre -->
+        <h2>Sobre</h2>
+        <p>Esta é a página sobre nós.</p>
+    </div>
+
+    <div id="analise" class="container hidden">
+        <!-- Resumo de Análise e Desenvolvimento de Sistemas -->
+        <h2><strong>Tecnologia em Análise e Desenvolvimento de Sistemas</strong></h2>
+        <p><em>Objetivo Geral</em></p>
+        <p>O curso de Análise e Desenvolvimento de Sistemas do Câmpus São Paulo Pirituba tem como objetivo capacitar o egresso a atuar na área de Tecnologia de Informação (TI) em atividades como análise, projeto, desenvolvimento, gerenciamento e implantação de sistemas de informação computacionais. Essa capacitação é pautada pela valorização da prática e competências técnicas, tanto em análise quanto em desenvolvimento e pela atualização diante da realidade tecnológica, de modo que o profissional seja um mediador competente entre o desenvolvimento tecnológico e a sociedade em que se insere.</p>
+    </div>
+
     <div class="footer">
         <div class="footer-icons">
-            <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/MoveTop.png" alt="Ícone de seta para cima" class="icon">
+            <a href="#" onclick="scrollToTop()">
+                <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/MoveTop.png" alt="Ícone de seta para cima" class="icon">
+            </a>
             <a href="https://www.facebook.com/login" target="_blank">
                 <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/facebook.png" alt="Ícone do Facebook" class="facebook-icon">
             </a>
         </div>
         <p>IFSP - Campus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011) 2504-0100</p>
     </div>
+    <script>
+        function showSection(sectionId) {
+            var sections = document.getElementsByClassName('container');
+            for(var i = 0; i < sections.length; i++) {
+                sections[i].classList.add('hidden');
+            }
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
+
 
 
