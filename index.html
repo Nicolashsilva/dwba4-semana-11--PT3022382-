@@ -3,44 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> dwba4-semana-03-PT3022382</title>
+    <title>dwba4-semana-04-PT3022382</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #006600;
+            color: white;
+            text-align: center;
+            padding: 20px;
         }
         .header img {
             width: 150px;
         }
+        .container {
+            padding: 0 15px;
+        }
         .evento img {
-            width: 400px;
+            width: 100%;
+            max-width: 400px;
         }
         .biblioteca img {
             width: 100px;
         }
-        .suap img {
-            width: 300px;
+        .suap iframe {
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+            border: none;
         }
         .footer {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: flex-end;
-            position: relative;
-            bottom: 0;
-            left: 0;
+            background-color: #333;
+            color: white;
+            text-align: left;
             padding: 10px;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
         }
         .footer-icons {
             display: flex;
+            margin-bottom: 10px;
         }
         .footer img.icon, .footer img.facebook-icon {
-            width: 30px; /* Diminuindo o tamanho dos ícones */
+            width: 30px;
             height: auto;
-            margin-right: 5px; /* Espaço entre os ícones */
+            margin-right: 10px;
         }
         .footer p {
-            margin-top: 10px;
+            margin-top: 0;
         }
     </style>
 </head>
@@ -48,29 +63,29 @@
     <div class="header">
         <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/Logo.jpg" alt="Logo Instituto Federal São Paulo">
     </div>
+    <div class="container">
+        <section class="evento">
+            <h2>Eventos</h2>
+            <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/SEJA_RARO.jpg" alt="Semana Nacional de Ciência e Tecnologia">
+            <p>Semana Nacional de Ciência e Tecnologia - IFSP realizará evento entre os dias 19 e 23 de outubro.</p>
 
-    <section class="evento">
-        <h2>Eventos</h2>
-        <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/SEJA_RARO.jpg" alt="Semana Nacional de Ciência e Tecnologia">
-        <p>Semana Nacional de Ciência e Tecnologia - IFSP realizará evento entre os dias 19 e 23 de outubro.</p>
-        
-        <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/maratona.jpeg" alt="III INTERIFS 2020">
-        <p>III INTERIFS 2020 - Maratona de programação do IFSP - Data: 31/10 - <a href="http://bit.ly/3interif">Inscrições</a></p>
-        
-    </section>
+            <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/maratona.jpeg" alt="III INTERIFS 2020">
+            <p>III INTERIFS 2020 - Maratona de programação do IFSP - Data: 31/10 - <a href="http://bit.ly/3interif">Inscrições</a></p>
+        </section>
 
-    <section class="biblioteca">
-        <h2>Sobre a Biblioteca</h2>
-        <p>Conheça os novos títulos disponíveis na nossa biblioteca</p>
-        <p><strong>Publicado:</strong> Quarta-feira, 14 de agosto de 2019</p>
-        <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/library.jpeg" alt="Ícone da Biblioteca">
-    </section>
+        <section class="biblioteca">
+            <h2>Sobre a Biblioteca</h2>
+            <p>Conheça os novos títulos disponíveis na nossa biblioteca</p>
+            <p><strong>Publicado:</strong> Quarta-feira, 14 de agosto de 2019</p>
+            <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/library.jpeg" alt="Ícone da Biblioteca">
+        </section>
 
-    <section class="suap">
-        <h2>Conheça o SUAP</h2>
-        <p>Tutorial de Acesso - SUAP 1</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/1egUfDkqkaA?si=EpxuQdMr0LBlbggK" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </section>
+        <section class="suap">
+            <h2>Conheça o SUAP</h2>
+            <p>Tutorial de Acesso - SUAP 1</p>
+            <iframe src="https://www.youtube.com/embed/1egUfDkqkaA?si=EpxuQdMr0LBlbggK" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+    </div>
 
     <div class="footer">
         <div class="footer-icons">
@@ -83,4 +98,5 @@
     </div>
 </body>
 </html>
+
 
