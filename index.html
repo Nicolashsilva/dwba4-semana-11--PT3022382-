@@ -10,6 +10,9 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         .header {
             background-color: #006600;
@@ -32,6 +35,7 @@
         }
         .container {
             padding: 0 15px;
+            flex: 1;
         }
         .evento img {
             width: 100%;
@@ -51,15 +55,20 @@
             color: white;
             padding: 10px;
             width: 100%;
-            text-align: left;
+            text-align: center;
+            position: relative;
         }
         .footer-icons {
             display: flex;
+            justify-content: center;
             margin-bottom: 10px;
         }
         .footer img.icon, .footer img.facebook-icon {
             width: 30px;
             height: auto;
+            margin-right: 10px;
+        }
+        .footer-icons a {
             margin-right: 10px;
         }
         .footer p {
@@ -118,18 +127,6 @@
         </section>
     </div>
 
-    <div id="contato" class="container hidden">
-        <!-- Página em Branco para Contato -->
-        <h2>Contato</h2>
-        <p>Esta é a página de contato.</p>
-    </div>
-
-    <div id="sobre" class="container hidden">
-        <!-- Página em Branco para Sobre -->
-        <h2>Sobre</h2>
-        <p>Esta é a página sobre nós.</p>
-    </div>
-
     <div id="analise" class="container hidden">
         <!-- Resumo de Análise e Desenvolvimento de Sistemas -->
         <h2><strong>Tecnologia em Análise e Desenvolvimento de Sistemas</strong></h2>
@@ -142,12 +139,13 @@
             <a href="#" onclick="scrollToTop()">
                 <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/MoveTop.png" alt="Ícone de seta para cima" class="icon">
             </a>
-            <a href="https://www.facebook.com/login" target="_blank">
+            <a href="https://www.facebook.com/ifsppirituba/?locale=pt_BR" target="_blank">
                 <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/facebook.png" alt="Ícone do Facebook" class="facebook-icon">
             </a>
         </div>
         <p>IFSP - Campus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011) 2504-0100</p>
     </div>
+
     <script>
         function showSection(sectionId) {
             var sections = document.getElementsByClassName('container');
