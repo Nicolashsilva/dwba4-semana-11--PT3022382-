@@ -1,4 +1,3 @@
-chat este é meu código atualmente, mas preciso do rodape de como esse rodape, pode me ajudar?
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -7,10 +6,10 @@ chat este é meu código atualmente, mas preciso do rodape de como esse rodape, 
     <title>dwba4-semana-04-PT3022382</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        body, html {
             margin: 0;
             padding: 0;
+            font-family: Arial, sans-serif;
         }
         .header {
             background-color: #006600;
@@ -48,24 +47,21 @@ chat este é meu código atualmente, mas preciso do rodape de como esse rodape, 
             border: none;
         }
         .footer {
-            background-color: #333;
-            color: white;
+            background-color: white;
+            color: black;
             padding: 10px;
             width: 100%;
             text-align: left;
         }
         .footer-icons {
             display: flex;
+            justify-content: flex-end;
             margin-bottom: 10px;
         }
         .footer img.icon, .footer img.facebook-icon {
             width: 30px;
             height: auto;
             margin-right: 10px;
-        }
-        .footer p {
-            margin-top: 10px;
-            margin-bottom: 0;
         }
         .hidden {
             display: none;
@@ -126,7 +122,17 @@ chat este é meu código atualmente, mas preciso do rodape de como esse rodape, 
         <p>O curso de Análise e Desenvolvimento de Sistemas do Câmpus São Paulo Pirituba tem como objetivo capacitar o egresso a atuar na área de Tecnologia de Informação (TI) em atividades como análise, projeto, desenvolvimento, gerenciamento e implantação de sistemas de informação computacionais. Essa capacitação é pautada pela valorização da prática e competências técnicas, tanto em análise quanto em desenvolvimento e pela atualização diante da realidade tecnológica, de modo que o profissional seja um mediador competente entre o desenvolvimento tecnológico e a sociedade em que se insere.</p>
     </div>
 
-    <div class="footer">
+    <div id="contato" class="container hidden" style="background-color: white;">
+        <h2>Contato</h2>
+        <p>Informações de contato aqui.</p>
+    </div>
+
+    <div id="sobre" class="container hidden" style="background-color: white;">
+        <h2>Sobre</h2>
+        <p>Informações sobre algo aqui.</p>
+    </div>
+
+    <div class="footer" id="footer">
         <div class="footer-icons">
             <a href="#" onclick="scrollToTop()">
                 <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/MoveTop.png" alt="Ícone de seta para cima" class="icon">
@@ -135,15 +141,22 @@ chat este é meu código atualmente, mas preciso do rodape de como esse rodape, 
                 <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/facebook.png" alt="Ícone do Facebook" class="facebook-icon">
             </a>
         </div>
-        <p>IFSP - Campus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011) 2504-0100</p>
     </div>
     <script>
         function showSection(sectionId) {
             var sections = document.getElementsByClassName('container');
-            for(var i = 0; i < sections.length; i++) {
+            for (var i = 0; i < sections.length; i++) {
                 sections[i].classList.add('hidden');
             }
             document.getElementById(sectionId).classList.remove('hidden');
+
+            // Esconder ou mostrar o rodapé baseado na seção escolhida
+            var footer = document.getElementById('footer');
+            if (sectionId === 'contato' || sectionId === 'sobre') {
+                footer.style.display = 'none';
+            } else {
+                footer.style.display = 'block';
+            }
         }
 
         function scrollToTop() {
@@ -152,3 +165,4 @@ chat este é meu código atualmente, mas preciso do rodape de como esse rodape, 
     </script>
 </body>
 </html>
+
