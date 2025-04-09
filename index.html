@@ -12,19 +12,21 @@
             font-family: Arial, sans-serif;
         }
         .header {
-            background-color: #006600;
-            color: white;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             padding: 20px;
+            background-color: white;
+        }
+        .header img {
+            max-width: 200px;
         }
         .nav {
-            background-color: #f4f4f4;
-            padding: 10px;
             text-align: right;
         }
         .nav a {
-            margin-left: 20px;
-            color: #333;
+            margin-left: 10px;
+            color: #4B0082;
             text-decoration: none;
         }
         .nav a:hover {
@@ -52,6 +54,7 @@
             padding: 10px;
             width: 100%;
             text-align: left;
+            border-top: 1px solid #ccc;
         }
         .footer-icons {
             display: flex;
@@ -61,7 +64,7 @@
         .footer img.icon, .footer img.facebook-icon {
             width: 30px;
             height: auto;
-            margin-right: 10px;
+            margin-left: 10px;
         }
         .hidden {
             display: none;
@@ -72,12 +75,11 @@
 
     <div class="header">
         <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/Logo.jpg" alt="Logo Instituto Federal São Paulo">
-    </div>
-
-    <div class="nav">
-        <a href="#home" onclick="showSection('home')">HOME</a> |
-        <a href="#contato" onclick="showSection('contato')">CONTATO</a> |
-        <a href="#sobre" onclick="showSection('sobre')">SOBRE</a>
+        <div class="nav">
+            <a href="#home" onclick="showSection('home')">HOME</a> |
+            <a href="#contato" onclick="showSection('contato')">CONTATO</a> |
+            <a href="#sobre" onclick="showSection('sobre')">SOBRE</a>
+        </div>
     </div>
 
     <div id="home" class="container">
@@ -124,12 +126,10 @@
 
     <div id="contato" class="container hidden" style="background-color: white;">
         <h2>Contato</h2>
-        <p>Informações de contato aqui.</p>
     </div>
 
     <div id="sobre" class="container hidden" style="background-color: white;">
         <h2>Sobre</h2>
-        <p>Informações sobre algo aqui.</p>
     </div>
 
     <div class="footer" id="footer">
@@ -142,6 +142,7 @@
             </a>
         </div>
     </div>
+
     <script>
         function showSection(sectionId) {
             var sections = document.getElementsByClassName('container');
@@ -150,7 +151,7 @@
             }
             document.getElementById(sectionId).classList.remove('hidden');
 
-            // Esconder ou mostrar o rodapé baseado na seção escolhida
+            // esconder ou mostrar o rodapé baseado na seção escolhida
             var footer = document.getElementById('footer');
             if (sectionId === 'contato' || sectionId === 'sobre') {
                 footer.style.display = 'none';
@@ -165,4 +166,5 @@
     </script>
 </body>
 </html>
+
 
