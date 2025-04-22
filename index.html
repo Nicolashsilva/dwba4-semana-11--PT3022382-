@@ -82,6 +82,17 @@
             padding: 8px;
             box-sizing: border-box;
         }
+        .radio-group {
+            margin-bottom: 10px;
+        }
+        .radio-group label {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .radio-options {
+            display: flex;
+            align-items: center;
+        }
         button {
             padding: 10px 20px;
             margin-right: 10px;
@@ -193,9 +204,11 @@
                 <label for="celular">Celular</label>
                 <input type="tel" id="celular" name="celular" required pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(99) 99999-9999">
 
-                <label for="sexo">Sexo</label>
-                <input type="radio" id="masculino" name="sexo" value="masculino" required>Masculino
-                <input type="radio" id="feminino" name="sexo" value="feminino">Feminino
+                <div class="radio-group">
+                    <label>Sexo</label>
+                    <label><input type="radio" id="masculino" name="sexo" value="masculino" required> Masculino</label>
+                    <label><input type="radio" id="feminino" name="sexo" value="feminino"> Feminino</label>
+                </div>
 
                 <label for="dataNascimento">Data de Nascimento</label>
                 <input type="date" id="dataNascimento" name="dataNascimento" required>
@@ -236,8 +249,10 @@
 
             <fieldset>
                 <legend>Opções de Resposta</legend>
-                <input type="radio" id="respostaEmail" name="opcaoResposta" value="email" required>E-Mail
-                <input type="radio" id="respostaTelefone" name="opcaoResposta" value="telefone">Telefone
+                <div class="radio-options">
+                    <label><input type="radio" id="respostaEmail" name="opcaoResposta" value="email" required> E-Mail</label>
+                    <label><input type="radio" id="respostaTelefone" name="opcaoResposta" value="telefone"> Telefone</label>
+                </div>
             </fieldset>
 
             <button type="submit">Enviar</button>
