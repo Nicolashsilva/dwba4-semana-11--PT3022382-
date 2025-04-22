@@ -69,6 +69,27 @@
         .hidden {
             display: none;
         }
+        form {
+            margin: 20px 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select, textarea {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+            background-color: #4B0082;
+            color: white;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -77,8 +98,10 @@
         <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/Logo.jpg" alt="Logo Instituto Federal São Paulo">
         <div class="nav">
             <a href="#home" onclick="showSection('home')">HOME</a> |
+            <a href="#evento" onclick="showSection('evento')">EVENTOS</a> |
             <a href="#contato" onclick="showSection('contato')">CONTATO</a> |
-            <a href="#sobre" onclick="showSection('sobre')">SOBRE</a>
+            <a href="#sobre" onclick="showSection('sobre')">SOBRE</a> |
+            <a href="#login" onclick="showSection('login')">ENTRAR</a>
         </div>
     </div>
 
@@ -117,15 +140,108 @@
         </section>
     </div>
 
+    <div id="login" class="container hidden">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="loginUsuario">Usuário</label>
+            <input type="text" id="loginUsuario" name="loginUsuario" required>
+
+            <label for="loginSenha">Senha</label>
+            <input type="password" id="loginSenha" name="loginSenha" required>
+            
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+
     <div id="analise" class="container hidden">
-        <!-- Resumo de Análise e Desenvolvimento de Sistemas -->
         <h2><strong>Tecnologia em Análise e Desenvolvimento de Sistemas</strong></h2>
         <p><em>Objetivo Geral</em></p>
         <p>O curso de Análise e Desenvolvimento de Sistemas do Câmpus São Paulo Pirituba tem como objetivo capacitar o egresso a atuar na área de Tecnologia de Informação (TI) em atividades como análise, projeto, desenvolvimento, gerenciamento e implantação de sistemas de informação computacionais. Essa capacitação é pautada pela valorização da prática e competências técnicas, tanto em análise quanto em desenvolvimento e pela atualização diante da realidade tecnológica, de modo que o profissional seja um mediador competente entre o desenvolvimento tecnológico e a sociedade em que se insere.</p>
     </div>
 
+    <div id="evento" class="container hidden">
+        <h2>Inscreva-se</h2>
+        <form id="eventForm">
+            <label for="eventoEvento">Evento</label>
+            <select id="eventoEvento" name="eventoEvento" required>
+                <option value="">-- Selecione --</option>
+                <option value="voeSemAsas">Voe sem asas</option>
+                <option value="festaJunina">Festa junina</option>
+                <option value="semanaTecnologia">Semana de tecnologia</option>
+            </select>
+
+            <fieldset>
+                <legend>Informações de Acesso</legend>
+                <label for="usuario">Usuário</label>
+                <input type="text" id="usuario" name="usuario" required>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" required>
+
+                <label for="confirmaSenha">Confirme a Senha</label>
+                <input type="password" id="confirmaSenha" name="confirmaSenha" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Informações Pessoais</legend>
+                <label for="nomeCompleto">Nome Completo</label>
+                <input type="text" id="nomeCompleto" name="nomeCompleto" required>
+                
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="celular">Celular</label>
+                <input type="tel" id="celular" name="celular" required pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(99) 99999-9999">
+
+                <label for="sexo">Sexo</label>
+                <input type="radio" id="masculino" name="sexo" value="masculino" required>Masculino
+                <input type="radio" id="feminino" name="sexo" value="feminino">Feminino
+
+                <label for="dataNascimento">Data de Nascimento</label>
+                <input type="date" id="dataNascimento" name="dataNascimento" required>
+
+                <label for="corFavorita">Cor Favorita</label>
+                <input type="color" id="corFavorita" name="corFavorita" required>
+
+                <label for="github">Perfil no Github</label>
+                <input type="url" id="github" name="github">
+            </fieldset>
+
+            <button type="submit">Inscrever</button>
+            <button type="button" onclick="limparFormulario('eventForm')">Limpar</button>
+        </form>
+    </div>
+
     <div id="contato" class="container hidden" style="background-color: white;">
-        <h2>Contato</h2>
+        <h2>Mande uma mensagem</h2>
+        <form id="contatoForm">
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="telefone">Telefone</label>
+            <input type="tel" id="telefone" name="telefone" required pattern="\(\d{2}\)\d{5}-\d{4}" placeholder="(99)99999-9999">
+
+            <label for="assunto">Assunto</label>
+            <select id="assunto" name="assunto" required>
+                <option value="">-- Selecione --</option>
+                <option value="reclamacao">Reclamação</option>
+                <option value="sugestao">Sugestão</option>
+            </select>
+
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" required></textarea>
+
+            <fieldset>
+                <legend>Opções de Resposta</legend>
+                <input type="radio" id="respostaEmail" name="opcaoResposta" value="email" required>E-Mail
+                <input type="radio" id="respostaTelefone" name="opcaoResposta" value="telefone">Telefone
+            </fieldset>
+
+            <button type="submit">Enviar</button>
+        </form>
     </div>
 
     <div id="sobre" class="container hidden" style="background-color: white;">
@@ -151,7 +267,6 @@
             }
             document.getElementById(sectionId).classList.remove('hidden');
 
-            // esconder ou mostrar o rodapé baseado na seção escolhida
             var footer = document.getElementById('footer');
             if (sectionId === 'analise' || sectionId === 'contato' || sectionId === 'sobre') {
                 footer.style.display = 'none';
@@ -163,6 +278,45 @@
         function scrollToTop() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
+
+        function limparFormulario(formId) {
+            document.getElementById(formId).reset();
+        }
+
+        document.getElementById('contatoForm').addEventListener('submit', function(event) {
+            const telefone = document.getElementById('telefone').value;
+            const telefonePattern = /^\(\d{2}\)\d{5}-\d{4}$/;
+
+            if (!telefonePattern.test(telefone)) {
+                alert('Por favor, insira um número de telefone no formato correto: (99)99999-9999');
+                event.preventDefault();
+            }
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const usuario = document.getElementById('loginUsuario').value;
+            const senha = document.getElementById('loginSenha').value;
+
+            if (!usuario || !senha) {
+                alert('Por favor, preencha todos os campos.');
+            } else {
+                alert('Login realizado com sucesso!');
+                document.getElementById('loginForm').reset();
+            }
+        });
+
+        document.getElementById('eventForm').addEventListener('submit', function(event) {
+            const usuario = document.getElementById('usuario').value;
+            const senha = document.getElementById('senha').value;
+            const confirmaSenha = document.getElementById('confirmaSenha').value;
+
+            if (senha !== confirmaSenha) {
+                alert('As senhas não conferem.');
+                event.preventDefault();
+            }
+        });
     </script>
 </body>
 </html>
