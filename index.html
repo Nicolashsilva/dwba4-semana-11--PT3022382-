@@ -101,6 +101,18 @@
             color: white;
             border: none;
         }
+        .login-group {
+            margin-bottom: 20px;
+        }
+        .forgot-password {
+            display: block;
+            margin-top: 10px;
+            color: #4B0082;
+            text-decoration: none;
+        }
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -154,12 +166,15 @@
     <div id="login" class="container hidden">
         <h2>Login</h2>
         <form id="loginForm">
-            <label for="loginUsuario">Usuário</label>
-            <input type="text" id="loginUsuario" name="loginUsuario" required>
-
-            <label for="loginSenha">Senha</label>
-            <input type="password" id="loginSenha" name="loginSenha" required>
-            
+            <div class="login-group">
+                <label for="loginUsuario">Usuário</label>
+                <input type="text" id="loginUsuario" name="loginUsuario" required>
+            </div>
+            <div class="login-group">
+                <label for="loginSenha">Senha</label>
+                <input type="password" id="loginSenha" name="loginSenha" required>
+            </div>
+            <a href="#" class="forgot-password">Esqueci a senha</a>
             <button type="submit">Entrar</button>
         </form>
     </div>
@@ -335,5 +350,3 @@
     </script>
 </body>
 </html>
-
-
