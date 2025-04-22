@@ -113,6 +113,18 @@
         .forgot-password:hover {
             text-decoration: underline;
         }
+        .color-container {
+            display: flex;
+            align-items: center;
+        }
+        .color-container label {
+            margin-right: 10px;
+        }
+        .color-container input[type="color"] {
+            width: 40px;
+            height: 25px;
+            border: none;
+        }
     </style>
 </head>
 <body>
@@ -228,8 +240,10 @@
                 <label for="dataNascimento">Data de Nascimento</label>
                 <input type="date" id="dataNascimento" name="dataNascimento" required>
 
-                <label for="corFavorita">Cor Favorita</label>
-                <input type="color" id="corFavorita" name="corFavorita" required>
+                <div class="color-container">
+                    <label for="corFavorita">Cor Favorita</label>
+                    <input type="color" id="corFavorita" name="corFavorita" value="#8B0000" required>
+                </div>
 
                 <label for="github">Perfil no Github</label>
                 <input type="url" id="github" name="github">
