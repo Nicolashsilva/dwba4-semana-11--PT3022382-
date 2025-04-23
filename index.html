@@ -15,25 +15,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 0 20px;
             background-color: #0033a0;
             color: white;
+            height: 60px;
         }
         .header img {
-            max-height: 80px;
+            max-height: 60px;
         }
         .nav {
-            position: relative;
+            display: flex;
+            align-items: center;
         }
         .nav a {
-            margin-left: 10px;
+            margin: 0 10px;
             color: white;
             text-decoration: none;
-            padding: 10px;
+            padding: 10px 0;
         }
-        .nav a:hover, .dropdown-content a:hover {
-            background-color: white;
-            color: #0033a0;
+        .nav a:hover {
+            background-color: #002970;
+            color: white;
             text-decoration: none;
         }
         .dropdown {
@@ -46,18 +48,19 @@
             background-color: white;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            
         }
         .dropdown-content a {
             color: #0033a0;
+            padding: 10px 20px;
             text-decoration: none;
             display: block;
-            padding: 10px;
         }
         .dropdown:hover .dropdown-content {
             display: block;
         }
         .container {
-            padding: 0 15px;
+            padding: 20px 15px;
         }
         .evento img {
             width: 100%;
@@ -83,7 +86,7 @@
             margin-bottom: 10px;
         }
         .footer img.icon, .footer img.facebook-icon {
-            width: 30px;
+            width: 20px; /* Adjusted size */
             height: auto;
             margin-right: 10px;
         }
@@ -137,10 +140,6 @@
             padding: 20px;
             background-color: white;
         }
-        .sobre-container p {
-            margin-top: 20px;
-            font-size: 16px;
-        }
         .sobre-container .footer-icons {
             margin-top: 20px;
         }
@@ -148,6 +147,14 @@
             text-align: left;
             color: black;
             margin-top: 20px;
+        }
+        .sobre-container img.facebook-icon {
+            width: 50px; /* Adjusted size for a smaller Facebook icon */
+            height: auto;
+        }
+        .intern-content {
+            padding-bottom: 15px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -158,28 +165,20 @@
         <div class="nav">
             <a href="#home" onclick="showSection('home')">HOME</a> |
             <a href="#evento" onclick="showSection('evento')">EVENTOS</a> |
-            <div class="dropdown">
-                <a href="#analise" onclick="showSection('analise')">CURSOS</a> |
-                <div class="dropdown-content">
-                    <a href="#" onclick="showSection('analise')">Análise e Desenvolvimento de Sistemas</a>
-                    <a href="#">Engenharia de Produção</a>
-                </div>
-            </div>
+            <a href="#analise" onclick="showSection('analise')">CURSOS</a> |
             <a href="#contato" onclick="showSection('contato')">CONTATO</a> |
             <a href="#sobre" onclick="showSection('sobre')">SOBRE</a> |
             <a href="#login" onclick="showSection('login')">ENTRAR</a>
         </div>
     </div>
 
-    <div id="home" class="container">
-        <section class="evento">
-            <h2>Acontece no IFSP!</h2>
-            <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/SEJA_RARO.jpg" alt="Semana Nacional de Ciência e Tecnologia">
-            <p>Semana Nacional de Ciência e Tecnologia - IFSP realizará evento entre os dias 19 e 23 de outubro.</p>
+    <div id="home" class="container intern-content">
+        <h2>Acontece no IFSP!</h2>
+        <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/SEJA_RARO.jpg" alt="Semana Nacional de Ciência e Tecnologia">
+        <p>Semana Nacional de Ciência e Tecnologia - IFSP realizará evento entre os dias 19 e 23 de outubro.</p>
 
-            <h2>Conheça os desafios de inovação</h2>
-            <iframe src="https://www.youtube.com/embed/1egUfDkqkaA?si=EpxuQdMr0LBlbggK" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </section>
+        <h2>Conheça os desafios de inovação</h2>
+        <iframe src="https://www.youtube.com/embed/1egUfDkqkaA?si=EpxuQdMr0LBlbggK" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 
     <div id="login" class="container hidden">
@@ -200,13 +199,13 @@
         </div>
     </div>
 
-    <div id="analise" class="container hidden">
+    <div id="analise" class="container hidden intern-content">
         <h2><strong>Tecnologia em Análise e Desenvolvimento de Sistemas</strong></h2>
         <p><em>Objetivo Geral</em></p>
         <p>O curso de Análise e Desenvolvimento de Sistemas do Câmpus São Paulo Pirituba tem como objetivo capacitar o egresso a atuar na área de Tecnologia de Informação (TI) em atividades como análise, projeto, desenvolvimento, gerenciamento e implantação de sistemas de informação computacionais. Essa capacitação é pautada pela valorização da prática e competências técnicas, tanto em análise quanto em desenvolvimento e pela atualização diante da realidade tecnológica, de modo que o profissional seja um mediador competente entre o desenvolvimento tecnológico e a sociedade em que se insere.</p>
     </div>
 
-    <div id="evento" class="container hidden">
+    <div id="evento" class="container hidden intern-content">
         <h2>Inscreva-se</h2>
         <form id="eventForm">
             <label for="eventoEvento">Evento</label>
@@ -265,7 +264,7 @@
         </form>
     </div>
 
-    <div id="contato" class="container hidden" style="background-color: white;">
+    <div id="contato" class="container hidden intern-content" style="background-color: white;">
         <h2>Mande uma mensagem</h2>
         <form id="contatoForm">
             <label for="nome">Nome</label>
@@ -329,11 +328,7 @@
             for (var i = 0; i < sections.length; i++) {
                 sections[i].classList.add('hidden');
             }
-            if (sectionId == 'sobre') {
-                document.getElementById('sobre').classList.remove('hidden');
-            } else {
-                document.getElementById(sectionId).classList.remove('hidden');
-            }
+            document.getElementById(sectionId).classList.remove('hidden');
           
             var footer = document.getElementById('footer');
             if (sectionId === 'analise' || sectionId === 'contato' || sectionId === 'login' || sectionId === 'sobre') {
@@ -388,5 +383,3 @@
     </script>
 </body>
 </html>
-
-
