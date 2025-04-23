@@ -24,14 +24,36 @@
         .nav {
             text-align: right;
         }
-        .nav a, .dropdown a {
+        .nav .dropdown {
+            display: inline-block;
+        }
+        .nav a, .dropdown button {
             color: #4B0082;
             text-decoration: none;
             padding: 10px 15px;
             display: inline-block;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
         }
-        .nav a:hover, .dropdown-content a:hover {
+        .nav a:hover, .dropdown-content a:hover, .dropdown button:hover {
             background-color: #ddd;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            
+        }
+        .dropdown-content a {
+            padding: 12px 16px;
+            display: block;
+            text-align: left;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
         .container {
             padding: 0 15px;
@@ -69,25 +91,6 @@
         }
         .hidden {
             display: none;
-        }
-        .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            
-        }
-        .dropdown-content a {
-            padding: 12px 16px;
-          display: block;
-          text-align: left;
-        }
-        .dropdown:hover .dropdown-content {
-            display: block;
         }
         form {
             margin: 20px 0;
@@ -154,7 +157,7 @@
         <div class="nav">
             <a href="#home" onclick="showSection('home')">HOME</a> |
             <div class="dropdown">
-                <a href="#" class="dropbtn">PÁGINAS</a>
+                <button class="dropbtn">PÁGINAS</button>
                 <div class="dropdown-content">
                     <a href="#evento" onclick="showSection('evento')">EVENTOS</a>
                     <a href="#analise" onclick="showSection('analise')">CURSOS</a>
@@ -167,10 +170,39 @@
     </div>
 
     <div id="home" class="container">
-        <!-- Conteúdo da seção 'home' -->
-    </div>
+        <section class="cursos">
+            <h2>Cursos</h2>
+            <ul>
+                <li><a href="#analise" onclick="showSection('analise')">Análise e Desenvolvimento de Sistemas</a></li>
+                <li><a href="#">Engenharia de Produção</a></li>
+                <li><a href="#">Gestão em Tecnologia da Informação</a></li>
+                <li><a href="#">Letras</a></li>
+                <li><a href="#">Gestão Pública</a></li>
+            </ul>
+        </section>
 
-    <!-- Outras seções aqui... -->
+        <section class="evento">
+            <h2>Eventos</h2>
+            <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/SEJA_RARO.jpg" alt="Semana Nacional de Ciência e Tecnologia">
+            <p>Semana Nacional de Ciência e Tecnologia - IFSP realizará evento entre os dias 19 e 23 de outubro.</p>
+
+            <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/maratona.jpeg" alt="III INTERIFS 2020">
+            <p>III INTERIFS 2020 - Maratona de programação do IFSP - Data: 31/10 - <a href="http://bit.ly/3interif">Inscrições</a></p>
+        </section>
+
+        <section class="biblioteca">
+            <h2>Sobre a Biblioteca</h2>
+            <p>Conheça os novos títulos disponíveis na nossa biblioteca</p>
+            <p><strong>Publicado:</strong> Quarta-feira, 14 de agosto de 2019</p>
+            <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/library.jpeg" alt="Ícone da Biblioteca">
+        </section>
+
+        <section class="suap">
+            <h2>Conheça o SUAP</h2>
+            <p>Tutorial de Acesso - SUAP 1</p>
+            <iframe src="https://www.youtube.com/embed/1egUfDkqkaA?si=EpxuQdMr0LBlbggK" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+    </div>
 
     <div id="login" class="container hidden">
         <h2>Login</h2>
@@ -361,4 +393,3 @@
     </script>
 </body>
 </html>
-
