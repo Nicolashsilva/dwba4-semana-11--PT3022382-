@@ -16,25 +16,29 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px;
-            background-color: white;
+            background-color: #0033a0;
+            color: white;
         }
         .header img {
-            max-width: 200px;
+            max-height: 80px;
         }
         .nav {
             position: relative;
         }
         .nav a {
             margin-left: 10px;
-            color: #4B0082;
+            color: white;
             text-decoration: none;
             padding: 10px;
         }
         .nav a:hover, .dropdown-content a:hover {
-            text-decoration: underline;
+            background-color: white;
+            color: #0033a0;
+            text-decoration: none;
         }
         .dropdown {
             display: inline-block;
+            position: relative;
         }
         .dropdown-content {
             display: none;
@@ -42,10 +46,9 @@
             background-color: white;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            
         }
         .dropdown-content a {
-            color: #4B0082;
+            color: #0033a0;
             text-decoration: none;
             display: block;
             padding: 10px;
@@ -60,9 +63,6 @@
             width: 100%;
             max-width: 400px;
         }
-        .biblioteca img {
-            width: 100px;
-        }
         .suap iframe {
             width: 100%;
             max-width: 560px;
@@ -70,8 +70,8 @@
             border: none;
         }
         .footer {
-            background-color: white;
-            color: black;
+            background-color: #0033a0;
+            color: white;
             padding: 10px;
             width: 100%;
             text-align: right;
@@ -90,61 +90,64 @@
         .hidden {
             display: none;
         }
-        form {
-            margin: 20px 0;
+        .login-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
-        label {
-            display: block;
-            margin-bottom: 5px;
+        .login-container h2 {
+            margin-bottom: 20px;
         }
-        input, select, textarea {
+        input[type="text"], input[type="password"] {
             width: 100%;
-            margin-bottom: 10px;
-            padding: 8px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
             box-sizing: border-box;
         }
-        .radio-group {
-            margin-bottom: 10px;
-        }
-        .radio-group label {
-            display: inline-block;
-            margin-right: 10px;
-        }
-        .radio-options {
-            display: flex;
-            align-items: center;
-        }
-        button {
-            padding: 10px 20px;
-            margin-right: 10px;
-            cursor: pointer;
-            background-color: #4B0082;
+        .login-container button {
+            width: 100%;
+            padding: 15px;
+            background-color: #008000;
             color: white;
             border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
         }
-        .login-group {
-            margin-bottom: 20px;
+        .login-container button:hover {
+            background-color: #006400;
         }
         .forgot-password {
             display: block;
             margin-top: 10px;
-            color: #4B0082;
+            color: #0033a0;
             text-decoration: none;
         }
         .forgot-password:hover {
             text-decoration: underline;
         }
-        .color-container {
-            display: flex;
-            align-items: center;
+        .sobre-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
         }
-        .color-container label {
-            margin-right: 10px;
+        .sobre-container p {
+            margin-top: 20px;
+            font-size: 16px;
         }
-        .color-container input[type="color"] {
-            width: 50px;
-            height: 50px;
-            border: none;
+        .sobre-container .footer-icons {
+            margin-top: 20px;
+        }
+        .sobre-container .footer p {
+            text-align: left;
+            color: black;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -154,68 +157,47 @@
         <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/Logo.jpg" alt="Logo Instituto Federal São Paulo">
         <div class="nav">
             <a href="#home" onclick="showSection('home')">HOME</a> |
+            <a href="#evento" onclick="showSection('evento')">EVENTOS</a> |
             <div class="dropdown">
-                <a href="javascript:void(0)">PÁGINAS</a>
+                <a href="#analise" onclick="showSection('analise')">CURSOS</a> |
                 <div class="dropdown-content">
-                    <a href="#evento" onclick="showSection('evento')">EVENTOS</a>
-                    <a href="#analise" onclick="showSection('analise')">CURSOS</a>
-                    <a href="#contato" onclick="showSection('contato')">CONTATO</a>
-                    <a href="#sobre" onclick="showSection('sobre')">SOBRE</a>
+                    <a href="#" onclick="showSection('analise')">Análise e Desenvolvimento de Sistemas</a>
+                    <a href="#">Engenharia de Produção</a>
                 </div>
-            </div> | 
+            </div>
+            <a href="#contato" onclick="showSection('contato')">CONTATO</a> |
+            <a href="#sobre" onclick="showSection('sobre')">SOBRE</a> |
             <a href="#login" onclick="showSection('login')">ENTRAR</a>
         </div>
     </div>
 
     <div id="home" class="container">
-        <section class="cursos">
-            <h2>Cursos</h2>
-            <ul>
-                <li><a href="#analise" onclick="showSection('analise')">Análise e Desenvolvimento de Sistemas</a></li>
-                <li><a href="#">Engenharia de Produção</a></li>
-                <li><a href="#">Gestão em Tecnologia da Informação</a></li>
-                <li><a href="#">Letras</a></li>
-                <li><a href="#">Gestão Pública</a></li>
-            </ul>
-        </section>
-
         <section class="evento">
-            <h2>Eventos</h2>
+            <h2>Acontece no IFSP!</h2>
             <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/SEJA_RARO.jpg" alt="Semana Nacional de Ciência e Tecnologia">
             <p>Semana Nacional de Ciência e Tecnologia - IFSP realizará evento entre os dias 19 e 23 de outubro.</p>
 
-            <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/maratona.jpeg" alt="III INTERIFS 2020">
-            <p>III INTERIFS 2020 - Maratona de programação do IFSP - Data: 31/10 - <a href="http://bit.ly/3interif">Inscrições</a></p>
-        </section>
-
-        <section class="biblioteca">
-            <h2>Sobre a Biblioteca</h2>
-            <p>Conheça os novos títulos disponíveis na nossa biblioteca</p>
-            <p><strong>Publicado:</strong> Quarta-feira, 14 de agosto de 2019</p>
-            <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/library.jpeg" alt="Ícone da Biblioteca">
-        </section>
-
-        <section class="suap">
-            <h2>Conheça o SUAP</h2>
-            <p>Tutorial de Acesso - SUAP 1</p>
+            <h2>Conheça os desafios de inovação</h2>
             <iframe src="https://www.youtube.com/embed/1egUfDkqkaA?si=EpxuQdMr0LBlbggK" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </section>
     </div>
 
     <div id="login" class="container hidden">
-        <h2>Login</h2>
-        <form id="loginForm">
-            <div class="login-group">
-                <label for="loginUsuario">Usuário</label>
-                <input type="text" id="loginUsuario" name="loginUsuario" required>
-            </div>
-            <div class="login-group">
-                <label for="loginSenha">Senha</label>
-                <input type="password" id="loginSenha" name="loginSenha" required>
-            </div>
-            <a href="#" class="forgot-password">Esqueci a senha</a>
-            <button type="submit">Entrar</button>
-        </form>
+        <div class="login-container">
+            <h2>Entrar</h2>
+            <form id="loginForm">
+                <div class="login-group">
+                    <label for="loginUsuario">Usuário</label>
+                    <input type="text" id="loginUsuario" name="loginUsuario" required>
+                </div>
+                <div class="login-group">
+                    <label for="loginSenha">Senha</label>
+                    <input type="password" id="loginSenha" name="loginSenha" required>
+                </div>
+                <a href="#" class="forgot-password">Esqueci a senha</a>
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
     </div>
 
     <div id="analise" class="container hidden">
@@ -269,15 +251,17 @@
 
                 <div class="color-container">
                     <label for="corFavorita">Cor Favorita</label>
-                    <input type="color" id="corFavorita" name="corFavorita" value="#8B0000" required>
+                    <input type="color" id="corFavorita" name="corFavorita" value="#000000" required>
                 </div>
 
                 <label for="github">Perfil no Github</label>
                 <input type="url" id="github" name="github">
             </fieldset>
 
-            <button type="submit">Inscrever</button>
-            <button type="button" onclick="limparFormulario('eventForm')">Limpar</button>
+            <div class="submit-buttons">
+                <button type="submit">Inscrever-se</button>
+                <button type="button" onclick="limparFormulario('eventForm')">Limpar</button>
+            </div>
         </form>
     </div>
 
@@ -291,7 +275,7 @@
             <input type="email" id="email" name="email" required>
 
             <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" required pattern="\(\d{2}\)\d{5}-\d{4}" placeholder="(99)99999-9999">
+            <input type="tel" id="telefone" name="telefone" required pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(99) 99999-9999">
 
             <label for="assunto">Assunto</label>
             <select id="assunto" name="assunto" required>
@@ -311,12 +295,20 @@
                 </div>
             </fieldset>
 
-            <button type="submit">Enviar</button>
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="submit" style="background-color: #008000; width: 100px;">Enviar</button>
+            </div>
         </form>
     </div>
 
-    <div id="sobre" class="container hidden" style="background-color: white;">
+    <div id="sobre" class="sobre-container hidden">
         <h2>Sobre</h2>
+        <div class="footer-icons">
+            <a href="https://www.facebook.com/ifsppirituba/?locale=pt_BR" target="_blank">
+                <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/facebook.png" alt="Ícone do Facebook" class="facebook-icon">
+            </a>
+        </div>
+        <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011) 2504-0100</p>
     </div>
 
     <div class="footer" id="footer">
@@ -328,6 +320,7 @@
                 <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/facebook.png" alt="Ícone do Facebook" class="facebook-icon">
             </a>
         </div>
+        <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011) 2504-0100</p>
     </div>
 
     <script>
@@ -336,10 +329,14 @@
             for (var i = 0; i < sections.length; i++) {
                 sections[i].classList.add('hidden');
             }
-            document.getElementById(sectionId).classList.remove('hidden');
-
+            if (sectionId == 'sobre') {
+                document.getElementById('sobre').classList.remove('hidden');
+            } else {
+                document.getElementById(sectionId).classList.remove('hidden');
+            }
+          
             var footer = document.getElementById('footer');
-            if (sectionId === 'analise' || sectionId === 'contato' || sectionId === 'sobre') {
+            if (sectionId === 'analise' || sectionId === 'contato' || sectionId === 'login' || sectionId === 'sobre') {
                 footer.style.display = 'none';
             } else {
                 footer.style.display = 'block';
@@ -356,10 +353,10 @@
 
         document.getElementById('contatoForm').addEventListener('submit', function(event) {
             const telefone = document.getElementById('telefone').value;
-            const telefonePattern = /^\(\d{2}\)\d{5}-\d{4}$/;
+            const telefonePattern = /^\(\d{2}\) \d{5}-\d{4}$/;
 
             if (!telefonePattern.test(telefone)) {
-                alert('Por favor, insira um número de telefone no formato correto: (99)99999-9999');
+                alert('Por favor, insira um número de telefone no formato correto: (99) 99999-9999');
                 event.preventDefault();
             }
         });
@@ -391,4 +388,5 @@
     </script>
 </body>
 </html>
+
 
