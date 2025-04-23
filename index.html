@@ -22,35 +22,33 @@
             max-width: 200px;
         }
         .nav {
-            text-align: right;
+            position: relative;
         }
-        .nav .dropdown {
-            display: inline-block;
-        }
-        .nav a, .dropdown button {
+        .nav a {
+            margin-left: 10px;
             color: #4B0082;
             text-decoration: none;
-            padding: 10px 15px;
-            display: inline-block;
-            background: none;
-            border: none;
-            cursor: pointer;
-            font-size: 16px;
+            padding: 10px;
         }
-        .nav a:hover, .dropdown-content a:hover, .dropdown button:hover {
-            background-color: #ddd;
+        .nav a:hover, .dropdown-content a:hover {
+            text-decoration: underline;
+        }
+        .dropdown {
+            display: inline-block;
         }
         .dropdown-content {
             display: none;
             position: absolute;
             background-color: white;
+            min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             
         }
         .dropdown-content a {
-            padding: 12px 16px;
+            color: #4B0082;
+            text-decoration: none;
             display: block;
-            text-align: left;
+            padding: 10px;
         }
         .dropdown:hover .dropdown-content {
             display: block;
@@ -157,14 +155,14 @@
         <div class="nav">
             <a href="#home" onclick="showSection('home')">HOME</a> |
             <div class="dropdown">
-                <button class="dropbtn">PÁGINAS</button>
+                <a href="javascript:void(0)">PÁGINAS</a>
                 <div class="dropdown-content">
                     <a href="#evento" onclick="showSection('evento')">EVENTOS</a>
                     <a href="#analise" onclick="showSection('analise')">CURSOS</a>
                     <a href="#contato" onclick="showSection('contato')">CONTATO</a>
                     <a href="#sobre" onclick="showSection('sobre')">SOBRE</a>
                 </div>
-            </div> |
+            </div> | 
             <a href="#login" onclick="showSection('login')">ENTRAR</a>
         </div>
     </div>
@@ -393,3 +391,4 @@
     </script>
 </body>
 </html>
+
