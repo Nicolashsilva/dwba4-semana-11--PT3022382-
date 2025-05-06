@@ -39,15 +39,18 @@
 
         .nav a:hover,
         .nav a.active {
-            background-color: red;
+            background-color: green;
             color: white;
-            text-decoration: none;
+            text-decoration: underline;
         }
 
         .logo {
             background-color: green;
             width: 100%;
-            text-align: center;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .logo img {
@@ -61,7 +64,7 @@
         .grid-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 40px;
             padding: 20px;
         }
 
@@ -75,11 +78,17 @@
         .grid-item img {
             width: 100%;
             height: auto;
+            max-width: 400px;
         }
 
-        .evento img {
-            width: 100%;
-            max-width: 400px;
+        .grid-item h2 {
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        .grid-item p {
+            font-size: 16px;
+            margin: 15px 0 0;
         }
 
         .suap iframe {
@@ -87,6 +96,7 @@
             max-width: 560px;
             height: 315px;
             border: none;
+            margin: auto;
         }
 
         .footer {
@@ -211,7 +221,7 @@
         </div>
     </div>
 
-    <div id="home" class="container intern-content">
+    <div id="home" class="intern-content">
         <div class="grid-container">
             <div class="grid-item">
                 <h2>Radar IFSP: Eleições</h2>
@@ -465,4 +475,5 @@
 </body>
 
 </html>
+
 
