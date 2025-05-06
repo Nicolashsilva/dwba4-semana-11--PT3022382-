@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,18 +16,14 @@
         .header {
             background-color: #333333;
             color: white;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
         .header .nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             padding: 0 20px;
             height: 60px;
-            width: 100%;
         }
 
         .nav a {
@@ -39,56 +34,54 @@
 
         .nav a:hover,
         .nav a.active {
-            background-color: green;
+            background-color: red;
             color: white;
-            text-decoration: underline;
+            text-decoration: none;
         }
 
         .logo {
-            background-color: green;
-            width: 100%;
-            height: 150px;
             display: flex;
             justify-content: center;
             align-items: center;
+            background-color: green;
+            height: 100px;
         }
 
         .logo img {
             max-height: 100px;
         }
 
+        .dropdown {
+            display: inline-block;
+            position: relative;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-content a {
+            color: #0033a0;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
         .container {
-            padding: 20px;
+            padding: 20px 15px;
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
-            padding: 20px;
-        }
-
-        .grid-item {
-            background-color: #f0f0f0;
-            padding: 20px;
-            border: 1px solid #ccc;
-            text-align: center;
-        }
-
-        .grid-item img {
+        .evento img {
             width: 100%;
-            height: auto;
             max-width: 400px;
-        }
-
-        .grid-item h2 {
-            font-size: 18px;
-            margin-top: 15px;
-        }
-
-        .grid-item p {
-            font-size: 16px;
-            margin: 15px 0 0;
         }
 
         .suap iframe {
@@ -96,27 +89,27 @@
             max-width: 560px;
             height: 315px;
             border: none;
-            margin: auto;
         }
 
         .footer {
             background-color: #FFFFFF;
-            color: black;
+            color: white;
             padding: 10px;
             width: 100%;
-            text-align: center;
+            text-align: right;
             border-top: 1px solid #ccc;
         }
 
         .footer-icons {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             margin-bottom: 10px;
         }
 
         .footer img.icon,
         .footer img.facebook-icon {
             width: 20px;
+            /* Adjusted size */
             height: auto;
             margin-right: 10px;
         }
@@ -194,6 +187,7 @@
         .about-icon,
         .contact-icon {
             width: 20px;
+            /* Adjusted size for a smaller Facebook icon */
             height: auto;
         }
 
@@ -203,7 +197,6 @@
         }
     </style>
 </head>
-
 <body>
 
     <div class="header">
@@ -221,33 +214,37 @@
         </div>
     </div>
 
-    <div id="home" class="intern-content">
-        <div class="grid-container">
-            <div class="grid-item">
-                <h2>Radar IFSP: Eleições</h2>
-                <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/eleicoes.jpg?raw=true"
-                    alt="Eleições IFSP">
-                <p>Radar IFSP: Informe-se sobre as eleições do dia 13 de outubro. Todos os alunos e servidores podem votar; acesse aqui a cabine de votação online do seu campus.</p>
-            </div>
-            <div class="grid-item">
-                <h2>Semana Nacional de Ciência e Tecnologia</h2>
-                <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/snct.jpg?raw=true"
-                    alt="Semana Nacional de Ciência e Tecnologia">
-                <p>IFSP: SNCT reúne atividades entre 19 e 24 de outubro. Programação reúne iniciativas para aproximar pesquisadores e atividades culturais.</p>
-            </div>
-            <div class="grid-item">
-                <h2>IFSP oferece bolsas aos voluntários da Residência Pedagógica</h2>
-                <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/residencia_pedagogica.jpg?raw=true"
-                    alt="Residência Pedagógica">
-                <p>Bolsa de R\$ 400,00 será paga pelo período de três meses.</p>
-            </div>
-            <div class="grid-item suap">
-                <h2>Conheça os desafios de inovação</h2>
-                <iframe src="https://www.youtube.com/embed/5g5LQe3m8Po"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </div>
+    <div id="home" class="container intern-content">
+        <h2>Acontece no IFSP!</h2>
+
+        <div class="evento">
+            <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/eleicoes.jpg?raw=true" alt="Eleições IFSP">
+            <p><strong>Radar IFSP:</strong> informe-se sobre as eleições do dia 13 de outubro</p>
+            <p>Todos os alunos e servidores podem votar; acesse aqui a cabine de votação online do seu câmpus</p>
         </div>
+
+        <div class="evento">
+            <img src="residencia_psicologia.jpg" alt="Residência Pedagógica 2020">
+            <p>IFSP oferece bolsa aos voluntários da Residência Pedagógica</p>
+            <p>Bolsa de R\$ 400,00 será paga pelo período de três meses</p>
+        </div>
+
+        <div class="evento">
+            <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/snct.jpg?raw=true" alt="Semana Nacional de Ciência e Tecnologia">
+            <p><strong>IFSP: SNCT</strong> reúne atividades entre 19 e 24 de outubro</p>
+            <p>Programação reunirá iniciativas para aproximar pesquisadores e atividades culturais</p>
+        </div>
+
+        <div class="evento">
+            <img src="https://raw.githubusercontent.com/DWBA4/dwba4_semana_imagens/master/interifs.jpg" alt="III INTERIFS 2020">
+            <p>Inscrições abertas para a III Maratona InterIF</p>
+            <p>Maratona de programação do IFSP será realizada online, no dia 31 de outubro; inscrições até 26 de outubro</p>
+        </div>
+
+        <h2>Conheça os desafios de inovação</h2>
+        <iframe src="https://www.youtube.com/embed/5g5LQe3m8Po"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
     </div>
 
     <div id="login" class="container hidden">
@@ -384,8 +381,7 @@
                     alt="Ícone do Facebook" class="about-icon">
             </a>
         </div>
-        <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011)
-            2504-0100</p>
+        <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011) 2504-0100</p>
     </div>
 
     <div class="footer" id="footer">
@@ -399,8 +395,7 @@
                     alt="Ícone do Facebook" class="facebook-icon">
             </a>
         </div>
-        <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011)
-            2504-0100</p>
+        <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011) 2504-0100</p>
     </div>
 
     <script>
@@ -411,9 +406,16 @@
             }
             document.getElementById(sectionId).classList.remove('hidden');
 
+            var footer = document.getElementById('footer');
+            if (sectionId === 'analise' || sectionId === 'contato' || sectionId === 'login' || sectionId === 'sobre') {
+                footer.style.display = 'none';
+            } else {
+                footer.style.display = 'block';
+            }
+
             var navLinks = document.querySelectorAll(".nav a");
             navLinks.forEach((link) => {
-                if (link.getAttribute('href').includes(sectionId)) {
+                if (link.href.includes(sectionId)) {
                     link.classList.add("active");
                 } else {
                     link.classList.remove("active");
@@ -458,7 +460,7 @@
 
         document.getElementById('eventForm').addEventListener('submit', function (event) {
             const usuario = document.getElementById('usuario').value;
-            const senha = document.getElementById('senha').value;
+            const senha = document.getElementById('senha').
             const confirmaSenha = document.getElementById('confirmaSenha').value;
 
             if (senha !== confirmaSenha) {
