@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -197,6 +198,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="header">
@@ -216,29 +218,22 @@
 
     <div id="home" class="container intern-content">
         <h2>Acontece no IFSP!</h2>
-
-        <div class="evento">
-            <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/eleicoes.jpg?raw=true" alt="Eleições IFSP">
-            <p><strong>Radar IFSP:</strong> informe-se sobre as eleições do dia 13 de outubro</p>
-            <p>Todos os alunos e servidores podem votar; acesse aqui a cabine de votação online do seu câmpus</p>
+        <div>
+            <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/eleicoes.jpg?raw=true" alt="Eleições">
+            <p>Radar IFSP: informe-se sobre as eleições do dia 13 de outubro<br>Todos os alunos e servidores podem votar;
+                acesse aqui a cabine de votação online do seu campus</p>
         </div>
-
-        <div class="evento">
-            <img src="residencia_psicologia.jpg" alt="Residência Pedagógica 2020">
-            <p>IFSP oferece bolsa aos voluntários da Residência Pedagógica</p>
-            <p>Bolsa de R\$ 400,00 será paga pelo período de três meses</p>
-        </div>
-
-        <div class="evento">
+        <div>
             <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/snct.jpg?raw=true" alt="Semana Nacional de Ciência e Tecnologia">
-            <p><strong>IFSP: SNCT</strong> reúne atividades entre 19 e 24 de outubro</p>
-            <p>Programação reunirá iniciativas para aproximar pesquisadores e atividades culturais</p>
+            <p>IFSP: SNCT reúne atividades entre 19 e 24 de outubro<br>Programação reunirá iniciativas para aproximar pesquisadores e atividades culturais</p>
         </div>
-
-        <div class="evento">
-            <img src="https://raw.githubusercontent.com/DWBA4/dwba4_semana_imagens/master/interifs.jpg" alt="III INTERIFS 2020">
-            <p>Inscrições abertas para a III Maratona InterIF</p>
-            <p>Maratona de programação do IFSP será realizada online, no dia 31 de outubro; inscrições até 26 de outubro</p>
+        <div>
+            <img src="URL_DA_IMAGEM_RESIDENCIA_PSICOLOGIA" alt="Residência Pedagógica">
+            <p>IFSP oferece bolsa aos voluntários da Residência Pedagógica<br>Bolsa de R\$ 400,00 será paga pelo período de três meses</p>
+        </div>
+        <div>
+            <img src="URL_DA_IMAGEM_INTERIFS" alt="Maratona InterIF">
+            <p>Inscrições abertas para a III Maratona InterIF<br>Maratona de programação do IFSP será realizada online, no dia 31 de outubro; inscrições até 26 de outubro</p>
         </div>
 
         <h2>Conheça os desafios de inovação</h2>
@@ -381,7 +376,8 @@
                     alt="Ícone do Facebook" class="about-icon">
             </a>
         </div>
-        <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011) 2504-0100</p>
+        <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011)
+            2504-0100</p>
     </div>
 
     <div class="footer" id="footer">
@@ -395,7 +391,8 @@
                     alt="Ícone do Facebook" class="facebook-icon">
             </a>
         </div>
-        <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011) 2504-0100</p>
+        <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011)
+            2504-0100</p>
     </div>
 
     <script>
@@ -460,22 +457,15 @@
 
         document.getElementById('eventForm').addEventListener('submit', function (event) {
             const usuario = document.getElementById('usuario').value;
-            const senha = document.getElementById('senha').
+            const senha = document.getElementById('senha').value;
             const confirmaSenha = document.getElementById('confirmaSenha').value;
 
-            if (senha !== confirmaSenha) {
+           if (senha !== confirmaSenha) {
                 alert('As senhas não conferem.');
                 event.preventDefault();
             }
-        });
-
-        // Mostrar a seção "home" por padrão ao carregar a página
-        document.addEventListener("DOMContentLoaded", function () {
-            showSection("home");
         });
     </script>
 </body>
 
 </html>
-
-
