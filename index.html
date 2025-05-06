@@ -17,14 +17,18 @@
         .header {
             background-color: #333333;
             color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .header .nav {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
             padding: 0 20px;
             height: 60px;
+            width: 100%;
         }
 
         .nav a {
@@ -41,43 +45,36 @@
         }
 
         .logo {
-            display: flex;
-            justify-content: center;
-            align-items: center;
             background-color: green;
-            height: 100px;
+            width: 100%;
+            text-align: center;
         }
 
         .logo img {
             max-height: 100px;
         }
 
-        .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        }
-
-        .dropdown-content a {
-            color: #0033a0;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
         .container {
-            padding: 20px 15px;
+            padding: 20px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .grid-item {
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .grid-item img {
+            width: 100%;
+            height: auto;
         }
 
         .evento img {
@@ -94,23 +91,22 @@
 
         .footer {
             background-color: #FFFFFF;
-            color: white;
+            color: black;
             padding: 10px;
             width: 100%;
-            text-align: right;
+            text-align: center;
             border-top: 1px solid #ccc;
         }
 
         .footer-icons {
             display: flex;
-            justify-content: flex-start;
+            justify-content: center;
             margin-bottom: 10px;
         }
 
         .footer img.icon,
         .footer img.facebook-icon {
             width: 20px;
-            /* Adjusted size */
             height: auto;
             margin-right: 10px;
         }
@@ -188,7 +184,6 @@
         .about-icon,
         .contact-icon {
             width: 20px;
-            /* Adjusted size for a smaller Facebook icon */
             height: auto;
         }
 
@@ -217,15 +212,18 @@
     </div>
 
     <div id="home" class="container intern-content">
-        <h2>Acontece no IFSP!</h2>
-        <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/SEJA_RARO.jpg"
-            alt="Semana Nacional de Ciência e Tecnologia">
-        <p>Semana Nacional de Ciência e Tecnologia - IFSP realizará evento entre os dias 19 e 23 de outubro.</p>
-
-        <h2>Conheça os desafios de inovação</h2>
-        <iframe src="https://www.youtube.com/embed/1egUfDkqkaA?si=EpxuQdMr0LBlbggK"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h2>Acontece no IFSP!</h2>
+                <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/SEJA_RARO.jpg"
+                    alt="Semana Nacional de Ciência e Tecnologia">
+                <p>Semana Nacional de Ciência e Tecnologia - IFSP realizará evento entre os dias 19 e 23 de outubro.</p>
+            </div>
+            <div class="grid-item">
+                <h2>Conheça os desafios de inovação</h2>
+                <iframe src="https://www.youtube.com/embed/1egUfDkqkaA?si=EpxuQdMr0LBlbggK" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
     </div>
 
     <div id="login" class="container hidden">
@@ -389,16 +387,9 @@
             }
             document.getElementById(sectionId).classList.remove('hidden');
 
-            var footer = document.getElementById('footer');
-            if (sectionId === 'analise' || sectionId === 'contato' || sectionId === 'login' || sectionId === 'sobre') {
-                footer.style.display = 'none';
-            } else {
-                footer.style.display = 'block';
-            }
-
             var navLinks = document.querySelectorAll(".nav a");
             navLinks.forEach((link) => {
-                if (link.href.includes(sectionId)) {
+                if (link.getAttribute('href').includes(sectionId)) {
                     link.classList.add("active");
                 } else {
                     link.classList.remove("active");
@@ -450,6 +441,11 @@
                 alert('As senhas não conferem.');
                 event.preventDefault();
             }
+        });
+
+        // Mostrar a seção "home" por padrão ao carregar a página
+        document.addEventListener("DOMContentLoaded", function () {
+            showSection("home");
         });
     </script>
 </body>
