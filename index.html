@@ -214,14 +214,28 @@
     <div id="home" class="container intern-content">
         <div class="grid-container">
             <div class="grid-item">
-                <h2>Acontece no IFSP!</h2>
-                <img src="https://raw.githubusercontent.com/Nicolashsilva/PTBDWC_PT3022382_AC01/refs/heads/main/SEJA_RARO.jpg"
-                    alt="Semana Nacional de Ciência e Tecnologia">
-                <p>Semana Nacional de Ciência e Tecnologia - IFSP realizará evento entre os dias 19 e 23 de outubro.</p>
+                <h2>Radar IFSP: Eleições</h2>
+                <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/eleicoes.jpg?raw=true"
+                    alt="Eleições IFSP">
+                <p>Radar IFSP: Informe-se sobre as eleições do dia 13 de outubro. Todos os alunos e servidores podem votar; acesse aqui a cabine de votação online do seu campus.</p>
             </div>
             <div class="grid-item">
+                <h2>Semana Nacional de Ciência e Tecnologia</h2>
+                <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/snct.jpg?raw=true"
+                    alt="Semana Nacional de Ciência e Tecnologia">
+                <p>IFSP: SNCT reúne atividades entre 19 e 24 de outubro. Programação reúne iniciativas para aproximar pesquisadores e atividades culturais.</p>
+            </div>
+            <div class="grid-item">
+                <h2>IFSP oferece bolsas aos voluntários da Residência Pedagógica</h2>
+                <img src="https://github.com/DWBA4/dwba4_semana_imagens/blob/master/residencia_pedagogica.jpg?raw=true"
+                    alt="Residência Pedagógica">
+                <p>Bolsa de R\$ 400,00 será paga pelo período de três meses.</p>
+            </div>
+            <div class="grid-item suap">
                 <h2>Conheça os desafios de inovação</h2>
-                <iframe src="https://www.youtube.com/embed/1egUfDkqkaA?si=EpxuQdMr0LBlbggK" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/5g5LQe3m8Po"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -287,7 +301,7 @@
                 <input type="email" id="email" name="email" required>
 
                 <label for="celular">Celular</label>
-                <input type="tel" id="celular" name="celular" required pattern="\(\d{2}\) \d{5}-\d{4}"
+                <input type="tel" id="celular" name="celular" required pattern="$\d{2}$ \d{5}-\d{4}"
                     placeholder="(99) 99999-9999">
 
                 <div class="radio-group">
@@ -325,7 +339,7 @@
             <input type="email" id="email" name="email" required>
 
             <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" required pattern="\(\d{2}\) \d{5}-\d{4}"
+            <input type="tel" id="telefone" name="telefone" required pattern="$\d{2}$ \d{5}-\d{4}"
                 placeholder="(99) 99999-9999">
 
             <label for="assunto">Assunto</label>
@@ -410,7 +424,7 @@
 
         document.getElementById('contatoForm').addEventListener('submit', function (event) {
             const telefone = document.getElementById('telefone').value;
-            const telefonePattern = /^\(\d{2}\) \d{5}-\d{4}$/;
+            const telefonePattern = /^$\d{2}$ \d{5}-\d{4}$/;
 
             if (!telefonePattern.test(telefone)) {
                 alert('Por favor, insira um número de telefone no formato correto: (99) 99999-9999');
@@ -451,3 +465,4 @@
 </body>
 
 </html>
+
