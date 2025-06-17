@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,44 +51,69 @@
             max-height: 100px;
         }
 
-        .dropdown {
-            display: inline-block;
-            position: relative;
-        }
-
-        .dropdown-content {
+        .hidden {
             display: none;
-            position: absolute;
-            background-color: white;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        }
-
-        .dropdown-content a {
-            color: #0033a0;
-            padding: 10px 20px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
         }
 
         .container {
             padding: 20px 15px;
         }
 
-        .evento img {
-            width: 100%;
-            max-width: 400px;
+        .login-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
-        .suap iframe {
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        .login-container button {
             width: 100%;
-            max-width: 560px;
-            height: 315px;
+            padding: 15px;
+            background-color: #008000;
+            color: white;
             border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .login-container button:hover {
+            background-color: #006400;
+        }
+
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .forgot-password {
+            display: inline-block;
+            margin-top: 10px;
+            color: #0033a0;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
         }
 
         .footer {
@@ -115,86 +139,11 @@
             margin-right: 10px;
         }
 
-        .hidden {
-            display: none;
-        }
-
-        .login-container {
-            max-width: 600px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #f0f0f0;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .login-container h2 {
-            margin-bottom: 20px;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-sizing: border-box;
-        }
-
-        .login-container button {
-            width: 100%;
-            padding: 15px;
-            background-color: #008000;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
-
-        .login-container button:hover {
-            background-color: #006400;
-        }
-
-        .forgot-password {
-            display: block;
-            margin-top: 10px;
-            color: #0033a0;
+        .footer a {
+            color: black;
             text-decoration: none;
         }
 
-        .forgot-password:hover {
-            text-decoration: underline;
-        }
-
-        .sobre-container {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: white;
-        }
-
-        .sobre-container .footer-icons {
-            margin-top: 20px;
-        }
-
-        .sobre-container .footer p {
-            text-align: left;
-            color: black;
-            margin-top: 20px;
-        }
-
-        .about-icon,
-        .contact-icon {
-            width: 20px;
-            height: auto;
-        }
-
-        .intern-content {
-            padding-bottom: 15px;
-            margin-top: 10px;
-        }
     </style>
 </head>
 
@@ -215,7 +164,7 @@
         </div>
     </div>
 
-    <div id="home" class="container intern-content">
+    <div id="home" class="container">
         <h2>Acontece no IFSP!</h2>
         <div>
             <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/eleicoes.jpg?raw=true" alt="Eleições">
@@ -243,23 +192,27 @@
 
     <div id="login" class="container hidden">
         <div class="login-container">
-            <h2>Entrar</h2>
+            <h2>Faça login</h2>
             <form id="loginForm">
                 <div class="login-group">
-                    <label for="loginUsuario">Usuário</label>
-                    <input type="text" id="loginUsuario" name="loginUsuario" required>
+                    <input type="text" id="loginEmail" name="loginEmail" placeholder="Email">
                 </div>
                 <div class="login-group">
-                    <label for="loginSenha">Senha</label>
-                    <input type="password" id="loginSenha" name="loginSenha" required>
+                    <input type="password" id="loginSenha" name="loginSenha" placeholder="Senha">
                 </div>
-                <a href="#" class="forgot-password">Esqueci a senha</a>
-                <button type="submit">Entrar</button>
+                <div class="login-options">
+                    <div>
+                        <input type="checkbox" id="lembrar" name="lembrar">
+                        <label for="lembrar">Lembrar de mim</label>
+                    </div>
+                    <a href="#" class="forgot-password">Esqueci a senha</a>
+                </div>
+                <button type="submit">Login</button>
             </form>
         </div>
     </div>
 
-    <div id="analise" class="container hidden intern-content">
+    <div id="analise" class="container hidden">
         <h2><strong>Tecnologia em Análise e Desenvolvimento de Sistemas</strong></h2>
         <p><em>Objetivo Geral</em></p>
         <p>O curso de Análise e Desenvolvimento de Sistemas do Câmpus São Paulo Pirituba tem como objetivo capacitar o
@@ -270,7 +223,7 @@
             tecnológico e a sociedade em que se insere.</p>
     </div>
 
-    <div id="evento" class="container hidden intern-content">
+    <div id="evento" class="container hidden">
         <h2>Inscreva-se</h2>
         <form id="eventForm">
             <label for="eventoEvento">Evento</label>
@@ -330,7 +283,7 @@
         </form>
     </div>
 
-    <div id="contato" class="container hidden intern-content">
+    <div id="contato" class="container hidden">
         <h2>Mande uma mensagem</h2>
         <form id="contatoForm">
             <label for="nome">Nome</label>
@@ -367,12 +320,12 @@
         </form>
     </div>
 
-    <div id="sobre" class="sobre-container hidden">
+    <div id="sobre" class="container hidden">
         <h2>Sobre</h2>
         <div class="footer-icons">
             <a href="https://www.facebook.com/ifsppirituba/?locale=pt_BR" target="_blank">
                 <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/facebook.png?raw=true"
-                    alt="Ícone do Facebook" class="about-icon">
+                    alt="Ícone do Facebook" class="icon">
             </a>
         </div>
         <p>IFSP - Câmpus Pirituba - Av. Mutinga, 951 - Jardim Santo Elias - CEP: 05110-000 - São Paulo/SP - Contato: (011)
@@ -443,11 +396,11 @@
         document.getElementById('loginForm').addEventListener('submit', function (event) {
             event.preventDefault();
 
-            const usuario = document.getElementById('loginUsuario').value;
+            const email = document.getElementById('loginEmail').value;
             const senha = document.getElementById('loginSenha').value;
 
-            if (!usuario || !senha) {
-                alert('Por favor, preencha todos os campos.');
+            if (!email || !senha) {
+                alert('Por favor, preencha este campo.');
             } else {
                 alert('Login realizado com sucesso!');
                 document.getElementById('loginForm').reset();
@@ -464,7 +417,7 @@
                 event.preventDefault();
             }
         });
+
     </script>
 </body>
-
 </html>
