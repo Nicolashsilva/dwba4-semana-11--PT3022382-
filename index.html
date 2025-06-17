@@ -134,7 +134,6 @@
         .footer img.icon,
         .footer img.facebook-icon {
             width: 20px;
-            /* Adjusted size */
             height: auto;
             margin-right: 10px;
         }
@@ -255,7 +254,7 @@
                 <input type="email" id="email" name="email" required>
 
                 <label for="celular">Celular</label>
-                <input type="tel" id="celular" name="celular" required pattern="$\d{2}$ \d{5}-\d{4}"
+                <input type="tel" id="celular" name="celular" required pattern="\d{2} \d{5}-\d{4}"
                     placeholder="(99) 99999-9999">
 
                 <div class="radio-group">
@@ -293,7 +292,7 @@
             <input type="email" id="email" name="email" required>
 
             <label for="telefone">Telefone</label>
-            <input type="tel" id="telefone" name="telefone" required pattern="$\d{2}$ \d{5}-\d{4}"
+            <input type="tel" id="telefone" name="telefone" required pattern="\d{2} \d{5}-\d{4}"
                 placeholder="(99) 99999-9999">
 
             <label for="assunto">Assunto</label>
@@ -322,6 +321,19 @@
 
     <div id="sobre" class="container hidden">
         <h2>Sobre</h2>
+        <p>O Instituto Federal de Educação, Ciência e Tecnologia de São Paulo – é uma autarquia federal de ensino.</p>
+        <p>Fundada em 1909, como Escola de Aprendizes Artífices, é reconhecida pela sociedade paulista por sua
+            excelência no ensino público gratuito de qualidade.</p>
+        <p>Durante sua história, recebeu, também, os nomes de Escola Técnica Federal de São Paulo e Centro Federal
+            de Educação Tecnológica de São Paulo. Com a transformação em Instituto, em dezembro de 2008,
+            passou a ter relevância de universidade, destacando-se pela autonomia.</p>
+        <p>Com a mudança, o Instituto Federal de São Paulo passou a destinar 50% das vagas para os cursos técnicos e,
+            no mínimo, 20% das vagas para os cursos de licenciatura. Complementarmente,
+            continuará oferecendo cursos de formação inicial e continuada, tecnologias, engenharias e pós-graduação.</p>
+        <p>Além dos cursos presenciais, o Instituto Federal de São Paulo oferece os cursos Técnicos em Administração e em Informática para Internet e, a partir de 2012, o superior de Formação de Professores na modalidade de Ensino a Distância (EaD).</p>
+        <p>O IFSP é organizado em diversos câmpus e possui mais de 40 mil alunos matriculados nas 36 unidades distribuídas pelo estado de São Paulo.;</p>
+        <p>Localizado em Rua Pedro Vicente, 625 - Canindé - São Paulo - SP - Cep: 01109-010</p>
+
         <div class="footer-icons">
             <a href="https://www.facebook.com/ifsppirituba/?locale=pt_BR" target="_blank">
                 <img src="https://github.com/Nicolashsilva/PTBDWC_PT3022382_AC07/blob/main/facebook.png?raw=true"
@@ -383,9 +395,9 @@
             document.getElementById(formId).reset();
         }
 
-        document.getElementById('contatoForm').addEventListener('submit', function (event) {
+        document.getElementById('contatoForm').addEventListener('submit', function(event) {
             const telefone = document.getElementById('telefone').value;
-            const telefonePattern = /^$\d{2}$ \d{5}-\d{4}$/;
+            const telefonePattern = /\d{2} \d{5}-\d{4}/;
 
             if (!telefonePattern.test(telefone)) {
                 alert('Por favor, insira um número de telefone no formato correto: (99) 99999-9999');
@@ -393,7 +405,7 @@
             }
         });
 
-        document.getElementById('loginForm').addEventListener('submit', function (event) {
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault();
 
             const email = document.getElementById('loginEmail').value;
